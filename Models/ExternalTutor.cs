@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-#nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class ExternalTutor
@@ -28,8 +28,9 @@ namespace HighSchoolSupportSystem.Models
         [MaxLength(50)]
         public string VerificationStatus { get; set; } = string.Empty;
 
-        //Navigation Property
-        [ForeignKey(nameof(Tutor))]
+        // Navigation Property
+
+        [ForeignKey(nameof(TutorId))]
         public Tutor Tutor { get; set; } = null!;
     }
 }

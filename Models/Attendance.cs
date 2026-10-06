@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-#nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class Attendance
@@ -21,8 +21,9 @@ namespace HighSchoolSupportSystem.Models
         [MaxLength(1000)]
         public string Notes { get; set; } = string.Empty;
 
-        //Navigation Property
-        [ForeignKey(nameof(SupportSession))]
+        // Navigation Property
+
+        [ForeignKey(nameof(SupportSessionId))]
         public SupportSession SupportSession { get; set; } = null!;
     }
 }

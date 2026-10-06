@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class StudentParentGuardian
@@ -12,10 +14,12 @@ namespace HighSchoolSupportSystem.Models
 
         public int ParentGuardianId { get; set; }
 
-        // Navigation properties
-        [ForeignKey(nameof(Student))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(StudentId))]
         public Student Student { get; set; } = null!;
-        [ForeignKey(nameof(ParentGuardian))]
+
+        [ForeignKey(nameof(ParentGuardianId))]
         public ParentGuardian ParentGuardian { get; set; } = null!;
     }
 }

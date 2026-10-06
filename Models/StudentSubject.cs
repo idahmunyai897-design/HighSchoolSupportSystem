@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class StudentSubject
@@ -16,10 +18,12 @@ namespace HighSchoolSupportSystem.Models
 
         public bool IsActive { get; set; } = true;
 
-        //Navigation Properties
-        [ForeignKey(nameof(Student))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(StudentId))]
         public Student Student { get; set; } = null!;
-        [ForeignKey(nameof(Subject))]
+
+        [ForeignKey(nameof(SubjectId))]
         public Subject Subject { get; set; } = null!;
     }
 }

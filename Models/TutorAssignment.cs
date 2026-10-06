@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class TutorAssignment
@@ -23,14 +25,18 @@ namespace HighSchoolSupportSystem.Models
         [MaxLength(2000)]
         public string Notes { get; set; } = string.Empty;
 
-        //Navigation Properties
-        [ForeignKey(nameof(SupportRequest))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(SupportRequestId))]
         public SupportRequest SupportRequest { get; set; } = null!;
-        [ForeignKey(nameof(Tutor))]
+
+        [ForeignKey(nameof(TutorId))]
         public Tutor Tutor { get; set; } = null!;
-        [ForeignKey(nameof(AssignedByTeacher))]
+
+        [ForeignKey(nameof(AssignedByTeacherId))]
         public Teacher AssignedByTeacher { get; set; } = null!;
-        [ForeignKey(nameof(SupportSessions))]
-        public ICollection<SupportSession> SupportSessions { get; set; } = new List<SupportSession>();
+
+        public ICollection<SupportSession> SupportSessions { get; set; }
+            = new List<SupportSession>();
     }
 }

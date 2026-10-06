@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class User
@@ -28,11 +30,12 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
-        //Navigation Properties
-        [ForeignKey(nameof(SupportRequestsCreated))]
-        public ICollection<SupportRequest> SupportRequestsCreated { get; set; } = new List<SupportRequest>();
-        [ForeignKey(nameof(Notification))]
-        public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
-        //public ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
+        // Navigation Properties
+
+        public ICollection<SupportRequest> SupportRequestsCreated { get; set; }
+            = new List<SupportRequest>();
+
+        public ICollection<Notification> Notifications { get; set; }
+            = new List<Notification>();
     }
 }

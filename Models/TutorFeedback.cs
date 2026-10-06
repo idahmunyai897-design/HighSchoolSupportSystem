@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class TutorFeedback
@@ -19,12 +21,15 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
-        //Navigation Properties
-        [ForeignKey(nameof(SupportSession))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(SupportSessionId))]
         public SupportSession SupportSession { get; set; } = null!;
-        [ForeignKey(nameof(Tutor))]
+
+        [ForeignKey(nameof(TutorId))]
         public Tutor Tutor { get; set; } = null!;
-        [ForeignKey(nameof(Student))]
+
+        [ForeignKey(nameof(StudentId))]
         public Student Student { get; set; } = null!;
     }
 }

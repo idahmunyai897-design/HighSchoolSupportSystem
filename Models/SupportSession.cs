@@ -10,7 +10,7 @@ namespace HighSchoolSupportSystem.Models
 
         public int TutorAssignmentId { get; set; }
 
-        public DateTime SessionDate { get; set; }
+        public DateOnly SessionDate { get; set; }
 
         public TimeSpan StartTime { get; set; }
 
@@ -26,14 +26,15 @@ namespace HighSchoolSupportSystem.Models
         [MaxLength(2000)]
         public string Notes { get; set; } = string.Empty;
 
-        //Navigation Properties
-        [ForeignKey(nameof(TutorAssignment))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(TutorAssignmentId))]
         public TutorAssignment TutorAssignment { get; set; } = null!;
-        [ForeignKey(nameof(Attendance))]
+
         public Attendance? Attendance { get; set; }
-        [ForeignKey(nameof(StudentFeedback))]
+
         public StudentFeedback? StudentFeedback { get; set; }
-        [ForeignKey(nameof(TutorFeedback))]
+
         public TutorFeedback? TutorFeedback { get; set; }
     }
 }

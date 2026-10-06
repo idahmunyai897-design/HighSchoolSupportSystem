@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class Teacher
@@ -35,12 +37,15 @@ namespace HighSchoolSupportSystem.Models
 
         public bool IsActive { get; set; } = true;
 
-        //Navigation properties
-        [ForeignKey(nameof(TeacherStudent))]
-        public ICollection<TeacherStudent> TeacherStudents { get; set; } = new List<TeacherStudent>();
-        [ForeignKey(nameof(TutorApproval))]
-        public ICollection<TutorApproval> TutorApprovals { get; set; } = new List<TutorApproval>();
-        [ForeignKey(nameof(TutorAssignment))]
-        public ICollection<TutorAssignment> TutorAssignments { get; set; } = new List<TutorAssignment>();
+        // Navigation Properties
+
+        public ICollection<TeacherStudent> TeacherStudents { get; set; }
+            = new List<TeacherStudent>();
+
+        public ICollection<TutorApproval> TutorApprovals { get; set; }
+            = new List<TutorApproval>();
+
+        public ICollection<TutorAssignment> TutorAssignments { get; set; }
+            = new List<TutorAssignment>();
     }
 }

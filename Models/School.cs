@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class School
@@ -41,10 +43,12 @@ namespace HighSchoolSupportSystem.Models
 
         public bool IsActive { get; set; } = true;
 
-        //Navigation Properties
-        [ForeignKey(nameof(Grade))]
-        public ICollection<Grade> Grades { get; set; } = new List<Grade>();
-        [ForeignKey(nameof(SchoolSubject))]
-        public ICollection<SchoolSubject> SchoolSubjects { get; set; } = new List<SchoolSubject>();
+        // Navigation Properties
+
+        public ICollection<Grade> Grades { get; set; }
+            = new List<Grade>();
+
+        public ICollection<SchoolSubject> SchoolSubjects { get; set; }
+            = new List<SchoolSubject>();
     }
 }

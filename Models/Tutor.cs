@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class Tutor
@@ -33,20 +35,25 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime DateRegistered { get; set; } = DateTime.UtcNow;
 
-        //Nvaigation properties
-        [ForeignKey(nameof(StudentTutor))]
+        // Navigation Properties
+
         public StudentTutor StudentTutor { get; set; }
-        [ForeignKey(nameof(ExternalTutor))]
+
         public ExternalTutor ExternalTutor { get; set; }
-        [ForeignKey(nameof(TutorSubject))]
-        public ICollection<TutorSubject> TutorSubjects { get; set; } = new List<TutorSubject>();
-        [ForeignKey(nameof(Availability))]
-        public ICollection<Availability> Availabilities { get; set; } = new List<Availability>();
-        [ForeignKey(nameof(TutorApproval))]
-        public ICollection<TutorApproval> TutorApprovals { get; set; } = new List<TutorApproval>();
-        [ForeignKey(nameof(TutorAssignment))]
-        public ICollection<TutorAssignment> TutorAssignments { get; set; } = new List<TutorAssignment>();
-        [ForeignKey(nameof(TutorFeedback))]
-        public ICollection<TutorFeedback> TutorFeedbacks { get; set; } = new List<TutorFeedback>();
+
+        public ICollection<TutorSubject> TutorSubjects { get; set; }
+            = new List<TutorSubject>();
+
+        public ICollection<Availability> Availabilities { get; set; }
+            = new List<Availability>();
+
+        public ICollection<TutorApproval> TutorApprovals { get; set; }
+            = new List<TutorApproval>();
+
+        public ICollection<TutorAssignment> TutorAssignments { get; set; }
+            = new List<TutorAssignment>();
+
+        public ICollection<TutorFeedback> TutorFeedbacks { get; set; }
+            = new List<TutorFeedback>();
     }
 }

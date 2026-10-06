@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-#nullable disable 
+
+#nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class Student
@@ -45,20 +47,27 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime DateRegistered { get; set; } = DateTime.UtcNow;
 
-        //Navigation Property
-        [ForeignKey(nameof(Grade))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(GradeId))]
         public Grade Grade { get; set; } = null!;
-        [ForeignKey(nameof(StudentSubject))]
-        public ICollection<StudentSubject> StudentSubjects { get; set; } = new List<StudentSubject>();
-        [ForeignKey(nameof(StudentParentGuardian))]
-        public ICollection<StudentParentGuardian> StudentParentGuardians { get; set; } = new List<StudentParentGuardian>();
-        [ForeignKey(nameof(TeacherStudent))]
-        public ICollection<TeacherStudent> TeacherStudents { get; set; } = new List<TeacherStudent>();
-        [ForeignKey(nameof(StudentTutor))]
-        public ICollection<StudentTutor> StudentTutors { get; set; } = new List<StudentTutor>();
-        [ForeignKey(nameof(SupportRequest))]
-        public ICollection<SupportRequest> SupportRequests { get; set; } = new List<SupportRequest>();
-        [ForeignKey(nameof(StudentFeedback))]
-        public ICollection<StudentFeedback> StudentFeedbacks { get; set; } = new List<StudentFeedback>();
+
+        public ICollection<StudentSubject> StudentSubjects { get; set; }
+            = new List<StudentSubject>();
+
+        public ICollection<StudentParentGuardian> StudentParentGuardians { get; set; }
+            = new List<StudentParentGuardian>();
+
+        public ICollection<TeacherStudent> TeacherStudents { get; set; }
+            = new List<TeacherStudent>();
+
+        public ICollection<StudentTutor> StudentTutors { get; set; }
+            = new List<StudentTutor>();
+
+        public ICollection<SupportRequest> SupportRequests { get; set; }
+            = new List<SupportRequest>();
+
+        public ICollection<StudentFeedback> StudentFeedbacks { get; set; }
+            = new List<StudentFeedback>();
     }
 }

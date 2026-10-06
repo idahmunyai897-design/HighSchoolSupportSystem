@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class Notification
     {
         [Key]
         public int NotificationId { get; set; }
-        
+
         public int UserId { get; set; }
 
         [Required]
@@ -26,8 +28,9 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
-        //Navigation Property
-        [ForeignKey(nameof(User))]
+        // Navigation Property
+
+        [ForeignKey(nameof(UserId))]
         public User User { get; set; } = null!;
     }
 }

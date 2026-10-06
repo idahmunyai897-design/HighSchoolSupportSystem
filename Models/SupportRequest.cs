@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class SupportRequest
@@ -30,14 +32,18 @@ namespace HighSchoolSupportSystem.Models
 
         public DateTime? DateCompleted { get; set; }
 
-        //Navigation properties
-        [ForeignKey(nameof(Subject))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(StudentId))]
         public Student Student { get; set; } = null!;
-        [ForeignKey(nameof(Subject))]
+
+        [ForeignKey(nameof(SubjectId))]
         public Subject Subject { get; set; } = null!;
-        [ForeignKey(nameof(User))]
+
+        [ForeignKey(nameof(CreatedByUserId))]
         public User CreatedByUser { get; set; } = null!;
-        [ForeignKey(nameof(TutorAssignment))]
-        public ICollection<TutorAssignment> TutorAssignments { get; set; } = new List<TutorAssignment>();
+
+        public ICollection<TutorAssignment> TutorAssignments { get; set; }
+            = new List<TutorAssignment>();
     }
 }

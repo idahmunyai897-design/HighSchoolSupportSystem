@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class TutorSubject
@@ -12,10 +14,12 @@ namespace HighSchoolSupportSystem.Models
 
         public int SubjectId { get; set; }
 
-        //Navigation Properties
-        [ForeignKey(nameof(Tutor))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(TutorId))]
         public Tutor Tutor { get; set; } = null!;
-        [ForeignKey(nameof(Subject))]
+
+        [ForeignKey(nameof(SubjectId))]
         public Subject Subject { get; set; } = null!;
     }
 }

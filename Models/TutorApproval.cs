@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 #nullable disable
+
 namespace HighSchoolSupportSystem.Models
 {
     public class TutorApproval
@@ -21,10 +23,12 @@ namespace HighSchoolSupportSystem.Models
         [MaxLength(1000)]
         public string Comments { get; set; } = string.Empty;
 
-        //Navigation properties
-        [ForeignKey(nameof(Tutor))]
+        // Navigation Properties
+
+        [ForeignKey(nameof(TutorId))]
         public Tutor Tutor { get; set; } = null!;
-        [ForeignKey(nameof(ApprovedByTeacher))]
+
+        [ForeignKey(nameof(ApprovedByTeacherId))]
         public Teacher ApprovedByTeacher { get; set; } = null!;
     }
 }
