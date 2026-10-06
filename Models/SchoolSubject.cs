@@ -28,6 +28,6 @@ namespace HighSchoolSupportSystem.Models
         [ForeignKey(nameof(Subject))]
         public Subject Subject { get; set; } = null!;
         [ForeignKey(nameof(SubjectGroup))]
-        public SubjectGroup? SubjectGroup { get; set; }
+        public SubjectGroup SubjectGroup { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace HighSchoolSupportSystem.Models
         //Navigation Properties
         [ForeignKey(nameof(SupportRequestsCreated))]
         public ICollection<SupportRequest> SupportRequestsCreated { get; set; } = new List<SupportRequest>();
-        [ForeignKey(nameof(Notification)]
+        [ForeignKey(nameof(Notification))]
         public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
         //public ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
     }

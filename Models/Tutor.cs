@@ -46,7 +46,7 @@ namespace HighSchoolSupportSystem.Models
         public ICollection<TutorApproval> TutorApprovals { get; set; } = new List<TutorApproval>();
         [ForeignKey(nameof(TutorAssignment))]
         public ICollection<TutorAssignment> TutorAssignments { get; set; } = new List<TutorAssignment>();
-        [ForeignKey(nameof(TutorFeedback))]3
+        [ForeignKey(nameof(TutorFeedback))]
         public ICollection<TutorFeedback> TutorFeedbacks { get; set; } = new List<TutorFeedback>();
     }
 }
