@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HighSchoolSupportSystem.Models.Student>
+
+@{
+    ViewData["Title"] = "Student Subject Selection";
+}
+
+<div class="container mt-4">
+
+    <h1>Student Subject Selection</h1>
+
+    <p class="text-muted">
+        Select a learner to manage their subjects.
+    </p>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            No students have been added yet.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Grade</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.FullNames</td>
+
+                            <td>
+                                @student.Grade.GradeName
+                            </td>
+
+                            <td>
+                                <a class="btn btn-primary"
+                                   asp-action="Select"
+                                   asp-route-id="@student.StudentId">
+                                    Select Subjects
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    }
+
+</div>
