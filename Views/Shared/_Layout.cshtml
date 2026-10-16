@@ -1,377 +1,196 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>@ViewData["Title"] - High School Support System</title>
 
-    <script type="importmap"></script>
-
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
-    <!-- Main Site CSS -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
-    <!-- Project CSS -->
     <link rel="stylesheet" href="~/HighSchoolSupportSystem.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-
-    <!-- ========================= -->
-    <!-- NAVIGATION BAR -->
-    <!-- ========================= -->
-
     <header>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
             <div class="container-fluid">
 
-                <!-- SYSTEM / SCHOOL BRAND -->
-                <a class="navbar-brand d-flex align-items-center fw-bold"
-                   asp-area=""
+                <a class="navbar-brand d-flex align-items-center"
                    asp-controller="Home"
                    asp-action="Index">
-
                     <img src="~/images/Logo.jpg"
                          alt="Vertex Technical High School Logo"
                          height="50"
-                         class="me-2 rounded" />
+                         class="me-2" />
 
-                    <span>
-                        High School Support System
-                    </span>
-
+                    <span class="fw-bold">High School Support System</span>
                 </a>
 
-                <!-- MOBILE MENU BUTTON -->
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#mainNavigation"
-                        aria-controls="mainNavigation"
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
                         aria-expanded="false"
                         aria-label="Toggle navigation">
-
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
 
-                <!-- NAVIGATION LINKS -->
-                <div class="collapse navbar-collapse" id="mainNavigation">
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                    <!-- LEFT SIDE -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- HOME -->
                         <li class="nav-item">
-
                             <a class="nav-link"
-                               asp-area=""
                                asp-controller="Home"
-                               asp-action="Index">
-
-                                Home
-
-                            </a>
-
+                               asp-action="Index">Home</a>
                         </li>
 
-                        <!-- STUDENTS -->
                         <li class="nav-item">
-
                             <a class="nav-link"
-                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Index"
+                               asp-fragment="about">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Home"
+                               asp-action="Index"
+                               asp-fragment="services">Services</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
                                asp-controller="Students"
-                               asp-action="Index">
-
-                                Students
-
-                            </a>
-
+                               asp-action="Index">Students</a>
                         </li>
 
-                        <!-- TEACHERS -->
                         <li class="nav-item">
-
                             <a class="nav-link"
-                               asp-area=""
                                asp-controller="Teachers"
-                               asp-action="Index">
-
-                                Teachers
-
-                            </a>
-
+                               asp-action="Index">Teachers</a>
                         </li>
 
-                        <!-- TUTORS -->
                         <li class="nav-item dropdown">
-
                             <a class="nav-link dropdown-toggle"
                                href="#"
-                               id="tutorMenu"
+                               id="tutorsDropdown"
                                role="button"
                                data-bs-toggle="dropdown"
                                aria-expanded="false">
-
                                 Tutors
-
                             </a>
 
-                            <ul class="dropdown-menu"
-                                aria-labelledby="tutorMenu">
-
+                            <ul class="dropdown-menu" aria-labelledby="tutorsDropdown">
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="Tutors"
-                                       asp-action="Index">
-
-                                        All Tutors
-
-                                    </a>
-
+                                       asp-action="Index">All Tutors</a>
                                 </li>
 
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="StudentTutors"
-                                       asp-action="Index">
-
-                                        Student Tutors
-
-                                    </a>
-
+                                       asp-action="Index">Student Tutors</a>
                                 </li>
 
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="ExternalTutors"
-                                       asp-action="Index">
-
-                                        External Tutors
-
-                                    </a>
-
+                                       asp-action="Index">External Tutors</a>
                                 </li>
-
                             </ul>
-
                         </li>
 
-                        <!-- SUBJECTS -->
                         <li class="nav-item">
-
                             <a class="nav-link"
                                asp-controller="Subjects"
-                               asp-action="Index">
-
-                                Subjects
-
-                            </a>
-
+                               asp-action="Index">Subjects</a>
                         </li>
 
-                        <!-- ACADEMIC SUPPORT -->
                         <li class="nav-item dropdown">
-
                             <a class="nav-link dropdown-toggle"
                                href="#"
-                               id="supportMenu"
+                               id="supportDropdown"
                                role="button"
                                data-bs-toggle="dropdown"
                                aria-expanded="false">
-
                                 Academic Support
-
                             </a>
 
-                            <ul class="dropdown-menu"
-                                aria-labelledby="supportMenu">
-
+                            <ul class="dropdown-menu" aria-labelledby="supportDropdown">
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="SupportRequests"
-                                       asp-action="Index">
-
-                                        Support Requests
-
-                                    </a>
-
+                                       asp-action="Index">Support Requests</a>
                                 </li>
 
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="TutorAssignments"
-                                       asp-action="Index">
-
-                                        Tutor Assignments
-
-                                    </a>
-
+                                       asp-action="Index">Tutor Assignments</a>
                                 </li>
 
                                 <li>
-
                                     <a class="dropdown-item"
                                        asp-controller="StudentSubjects"
-                                       asp-action="Index">
-
-                                        Student Subjects
-
-                                    </a>
-
+                                       asp-action="Index">Student Subjects</a>
                                 </li>
-
                             </ul>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Account"
+                               asp-action="Login">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-primary ms-lg-2 mt-2 mt-lg-0"
+                               asp-controller="Account"
+                               asp-action="Register">Register</a>
                         </li>
 
                     </ul>
-
-                    <!-- RIGHT SIDE -->
-                    <ul class="navbar-nav">
-
-                        <!-- LOGIN -->
-                        <li class="nav-item">
-
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Login">
-
-                                🔐 Login
-
-                            </a>
-
-                        </li>
-
-                        <!-- REGISTER -->
-                        <li class="nav-item">
-
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Register">
-
-                                📝 Register
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
                 </div>
-
             </div>
-
         </nav>
-
     </header>
 
-
-    <!-- ========================= -->
-    <!-- MAIN PICTURE -->
-    <!-- ========================= -->
-
-    <div class="container-fluid p-0">
-
-        <img src="~/images/Main_Picture.jpg"
-             alt="High School Support System"
-             class="img-fluid w-100 d-block" />
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- PAGE CONTENT -->
-    <!-- ========================= -->
-
     <main role="main">
-
         @RenderBody()
-
     </main>
 
+    <footer class="border-top bg-light text-muted mt-5 py-4">
+        <div class="container text-center">
 
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
+            <h5 class="text-dark">High School Support System</h5>
 
-    <footer class="border-top bg-light mt-5">
+            <p class="mb-2">
+                Connecting learners with the academic support they need.
+            </p>
 
-        <div class="container py-4">
+            <p class="mb-1">
+                <strong>Vertex Technical High School</strong>
+            </p>
 
-            <div class="row">
+            <p class="mb-2">
+                Johannesburg, Gauteng | School Code: VTHS001
+            </p>
 
-                <!-- SYSTEM INFORMATION -->
-                <div class="col-md-6">
-
-                    <h5>High School Support System</h5>
-
-                    <p class="text-muted mb-0">
-                        Connecting learners with the academic support they need.
-                    </p>
-
-                </div>
-
-                <!-- SCHOOL INFORMATION -->
-                <div class="col-md-6 text-md-end">
-
-                    <h6>Vertex Technical High School</h6>
-
-                    <p class="text-muted mb-0">
-                        Johannesburg, Gauteng
-                    </p>
-
-                    <p class="text-muted mb-0">
-                        School Code: VTHS001
-                    </p>
-
-                </div>
-
-            </div>
-
-            <hr />
-
-            <div class="d-flex justify-content-between flex-wrap">
-
-                <span class="text-muted">
-                    &copy; 2026 High School Support System
-                </span>
-
-                <a asp-controller="Home"
-                   asp-action="Privacy">
-
-                    Privacy
-
-                </a>
-
-            </div>
+            <p class="mb-0">
+                &copy; 2026 - High School Support System |
+                <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </p>
 
         </div>
-
     </footer>
 
-
-    <!-- ========================= -->
-    <!-- JAVASCRIPT -->
-    <!-- ========================= -->
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>

@@ -1,8 +1,240 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- HOME HERO SECTION -->
+<section class="home-hero"
+         style="background-image: url('/images/Home.jpeg');">
+
+    <div class="home-hero-content">
+        <h1>LEARN. SUPPORT. SUCCEED.</h1>
+
+        <p>
+            Connecting learners with academic support
+            to build skills, grow confidence, and shape
+            brighter futures.
+        </p>
+
+        <a href="#about" class="btn btn-primary btn-lg">
+            Get Started
+        </a>
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT SECTION -->
+<section id="about" class="container py-5">
+
+    <!-- INTRODUCTION -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">About Our Support System</h2>
+
+        <p class="text-muted mx-auto" style="max-width: 750px;">
+            Every learner deserves an opportunity to succeed.
+            Our High School Support System connects learners in
+            Grades 8 to 12 with academic support to help them
+            understand their subjects, build confidence and improve
+            their learning experience.
+        </p>
+    </div>
+
+
+    <!-- PART 1: EXTERNAL TUTORS -->
+    <div class="row align-items-center g-4 mb-5">
+
+        <div class="col-lg-6">
+            <img src="~/images/Tutors.jpeg"
+                 alt="Tutors providing academic support to learners"
+                 class="img-fluid rounded shadow"
+                 loading="lazy" />
+        </div>
+
+        <div class="col-lg-6">
+            <h3 class="fw-bold mb-3">Learn with the Right Support</h3>
+
+            <p>
+                Sometimes learners need additional guidance to
+                understand certain school subjects. Our system helps
+                connect learners who need assistance with suitable
+                external tutors who can provide academic guidance
+                and support.
+            </p>
+
+            <p>
+                Learners can request help with the subjects they find
+                challenging. The system helps organise support by
+                connecting learners with appropriate tutors and
+                supporting the arrangement of study sessions.
+            </p>
+
+            <p>
+                With guidance, practice and patience, learners can
+                strengthen their understanding and become more
+                confident in their schoolwork.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- PART 2: STUDENT-TO-STUDENT SUPPORT -->
+    <div class="row align-items-center g-4 flex-lg-row-reverse">
+
+        <div class="col-lg-6">
+            <img src="~/images/Student.jpeg"
+                 alt="One student helping another student with schoolwork"
+                 class="img-fluid rounded shadow"
+                 loading="lazy" />
+        </div>
+
+        <div class="col-lg-6">
+            <h3 class="fw-bold mb-3">Students Helping Students</h3>
+
+            <p>
+                Learning can become easier when students support
+                one another. Our system encourages peer tutoring,
+                where a learner who understands a particular subject
+                can help another learner who is struggling with it.
+            </p>
+
+            <p>
+                Student tutors must demonstrate good understanding
+                of the subject they want to assist with and receive
+                teacher approval before being assigned to support
+                other learners.
+            </p>
+
+            <p>
+                Through shared learning, teamwork and regular study
+                sessions, students can explain concepts to one
+                another, practise together and grow in confidence.
+                Helping another student also gives the tutor an
+                opportunity to strengthen their own understanding.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <div class="text-center mt-5">
+        <a href="#services" class="btn btn-outline-primary btn-lg">
+            Explore Our Services
+        </a>
+    </div>
+
+</section>
+
+
+<!-- SERVICES SECTION -->
+<section id="services" class="bg-light py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Services</h2>
+
+            <p class="text-muted">
+                Helping learners find the academic support they need.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- SERVICE 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-3">
+                            <span class="fs-1 text-primary">&#128218;</span>
+                        </div>
+
+                        <h5 class="card-title fw-bold">
+                            Academic Support Requests
+                        </h5>
+
+                        <p class="card-text">
+                            Learners can request help with subjects
+                            they find challenging and seek support
+                            to improve their understanding.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICE 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-3">
+                            <span class="fs-1 text-primary">&#129309;</span>
+                        </div>
+
+                        <h5 class="card-title fw-bold">
+                            Peer Tutoring
+                        </h5>
+
+                        <p class="card-text">
+                            Learners can be connected with suitable,
+                            teacher-approved student tutors who can
+                            help them study and practise their subjects.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVICE 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-3">
+                           <span class="fs-1 text-primary">&#128221;</span>
+                       </div>
+
+                        <h5 class="card-title fw-bold">
+                            Teacher Recommendations
+                        </h5>
+
+                        <p class="card-text">
+                            Teachers can identify learners who need
+                            additional help and recommend appropriate
+                            academic support.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION SECTION -->
+<section class="container py-5 text-center">
+
+    <h2 class="fw-bold">Every Learner Can Succeed</h2>
+
+    <p class="text-muted mx-auto" style="max-width: 700px;">
+        With the right guidance, consistent practice and support,
+        learners can strengthen their skills and approach their
+        studies with greater confidence.
+    </p>
+
+    <a asp-controller="Account"
+       asp-action="Register"
+       class="btn btn-primary btn-lg">
+        Get Started Today
+    </a>
+
+</section>

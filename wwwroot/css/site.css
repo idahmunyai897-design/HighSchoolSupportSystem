@@ -29,3 +29,54 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* HOME PAGE HERO SECTION */
+.home-hero {
+    min-height: 550px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+    /* DARK OVERLAY TO MAKE TEXT READABLE */
+    .home-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+/* TEXT ON TOP OF THE PICTURE */
+.home-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    color: white;
+}
+
+    .home-hero-content h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .home-hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+/* Keep the navigation bar visible while scrolling */
+body {
+    padding-top: 76px;
+}
+
+/* Keep section headings visible when navigating to them */
+#about,
+#services {
+    scroll-margin-top: 90px;
+}
